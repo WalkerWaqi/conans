@@ -12,7 +12,7 @@ class MqttcppConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
-    generators = "cmake"
+    generators = "cmake", "cmake_find_package"
     requires = [("mqttc/1.3.9")]
 
     def config_options(self):

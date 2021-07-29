@@ -9,5 +9,5 @@ conan upload mqttc/1.3.9 --all -r myconan
 ##### windows:
 
 ```
-conan create . -s compiler="Visual Studio" -s compiler.version=15 -o shared=True
+conan create . -s compiler="Visual Studio" -s compiler.version=15
 ```
