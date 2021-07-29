@@ -58,4 +58,7 @@ conan_basic_setup()
         self.copy("*.a", dst="lib", keep_path=False)
 
     def package_info(self):
-        self.cpp_info.libs = ["paho-mqttpp3"]
+        if self.options.shared:
+            self.cpp_info.libs = ["paho-mqttpp3"]
+        else:
+            self.cpp_info.libs = ["paho-mqttpp3-static"]

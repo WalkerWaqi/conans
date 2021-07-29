@@ -54,4 +54,7 @@ class MqttcConan(ConanFile):
         self.copy("*.a", dst="lib", keep_path=False)
 
     def package_info(self):
-        self.cpp_info.libs = ["paho-mqtt3a", "paho-mqtt3c"]
+        if self.options.shared:
+            self.cpp_info.libs = ["paho-mqtt3a", "paho-mqtt3c"]
+        else:
+            self.cpp_info.libs = ["paho-mqtt3a-static", "paho-mqtt3c-static"]
